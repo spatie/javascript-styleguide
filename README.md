@@ -54,6 +54,7 @@ export function query(selector) {
 }
 
 // This one's a bit longer, having everything on one line feels a bit heavy.
+// It's not easily scannable unlike the previous example.
 export const query = selector => document.querySelector(selector);
 ```
 
