@@ -2,6 +2,16 @@
 
 A work in progress JavaScript style guide for our projects at [Spatie](https://spatie.be).
 
+## ESLint
+
+This guide should be used side by side with our extendable base ESLint configuration file, which has it's own repository and is available on npm.
+
+https://github.com/spatie/eslint-config-spatie
+
+```
+npm install eslint-config-spatie --save-dev
+```
+
 ## Code Style
 
 ### Variable Assignment
@@ -154,3 +164,7 @@ const adder = a => (b) => {
     sum(a, b);
 };
 ```
+
+## Credits
+
+This style guide is mainly inspired by the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript), and [Benjamin De Cock's frontend guidelines](https://github.com/bendc/frontend-guidelines).
