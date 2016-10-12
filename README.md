@@ -4,7 +4,7 @@ A work in progress JavaScript style guide for our projects at [Spatie](https://s
 
 ## ESLint
 
-This guide should be used side by side with our extendable base ESLint configuration file, which has it's own repository and is available on npm.
+This guide should be used side by side with our base ESLint configuration file, which has it's own repository and is available on npm.
 
 https://github.com/spatie/eslint-config-spatie
 
