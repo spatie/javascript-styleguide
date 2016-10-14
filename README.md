@@ -14,6 +14,18 @@ yarn add --dev eslint-config-spatie
 
 ## Code Style
 
+- [Spacing and Indentation in Functions and Control Statements](#spacing-and-indentation-in-functions-and-control-statements)
+- [Spacing and Indentation in Objects and Arrays](#spacing-and-indentation-in-objects-and-arrays)
+- [Line Length](#line-length)
+- [Quotes](#quotes)
+- [Semicolons](#semicolons)
+- [Variable Assignment](#variable-assignment)
+- [Variable Names](#variable-names)
+- [Comparisons](#comperisons)
+- [Function Keyword vs. Arrow Functions](#function-keyword-vs-arrow-functions)
+- [Arrow Function Parameter Brackets](#arrow-function-parameter-brackets)
+- [Object and Array Destructuring](#object-and-array-destructuring)
+
 ### Spacing and Indentation in Functions and Control Statements
 
 Code must be indented with 4 spaces.
@@ -213,6 +225,28 @@ function saveUserSessions(userSessions) {
 // Ok, but pretty noisy.
 function saveUserSessions(userSessions) {
     userSessions.forEach(userSession => saveUserSession(userSession));
+}
+```
+
+### Comparisons
+
+Always use a triple equal to do variable comparisons. If you're unsure of the type, cast it first.
+
+```js
+// Good
+const one = 1;
+const another = "1";
+
+if (one === parseInt(another)) {
+    // ...
+}
+
+// Bad
+const one = 1;
+const another = "1";
+
+if (one == another) {
+    // ...
 }
 ```
 
