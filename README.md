@@ -30,7 +30,7 @@ function saveUser(user) {
 
 // Bad, it's hard to reason about abbreviations in blocks as they grow.
 function saveUser(u) {
-  localStorage.set('user', u);
+    localStorage.set('user', u);
 }
 ```
 
