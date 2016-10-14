@@ -18,6 +18,36 @@ yarn add --dev eslint-config-spatie
 
 Prefer `const` over `let`. Only use `let` to indicate that a variable will be reassigned. Never use `var`.
 
+### Variable Names
+
+Variable names generally shouldn't be abbreviated.
+
+```js
+// Good
+function saveUser(user) {
+    localStorage.set('user', user);
+}
+
+// Bad, it's hard to reason about abbreviations in blocks as they grow.
+function saveUser(u) {
+  localStorage.set('user', u);
+}
+```
+
+In single-line arrow functions, abbreviations are allowed to reduce noise if the context is clear enough. For example, if you're calling `map` of `forEach` on a collection of items, it's clear that the parameter is an item of a certain type, which can be derived from the collection's substantive variable name.
+
+```js
+// Good
+function saveUserSessions(userSessions) {
+    userSessions.forEach(s => saveUserSession(s));
+}
+
+// Ok, but pretty noisy.
+function saveUserSessions(userSessions) {
+    userSessions.forEach(userSession => saveUserSession(userSession));
+}
+```
+
 ### Function Keyword vs. Arrow Functions
 
 Function declarations should use the function keyword.
