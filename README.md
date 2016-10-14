@@ -14,6 +14,135 @@ yarn add --dev eslint-config-spatie
 
 ## Code Style
 
+### Spacing and Indentation in Functions and Control Statements
+
+Code must be indented with 4 spaces.
+
+```js
+// Good
+function greet(name) {
+    return `Hello ${name}!`;
+}
+
+// Bad, only 2 spaces
+function greet(name) {
+  return `Hello ${name}!`;
+}
+```
+
+When it comes to spaces around symbols or keywords, the rule of thumb is: add them. Everything in this section should be handled by ESLint.
+
+```js
+// Good
+if (true) {
+    // ...
+} else {
+    // ...
+}
+
+// Bad, needs more spaces!
+if(true){
+    // ...
+}else{
+    // ...
+}
+```
+
+Infix operators need room to breath.
+
+```js
+// Good
+const two = 1 + 1;
+
+// Bad, needs more spaces!
+const two = 1+1;
+```
+
+Braces should always be on the same as it's corresponding statement or declaration (known as *the one true brace style*).
+
+```js
+// Good
+if (true) {
+    // ...
+}
+
+// Bad
+if (true)
+{
+    // ...
+}
+```
+
+Named functions don't need a space before their parameters. Anonymous ones do.
+
+```js
+// Good
+function save(user) {
+    // ...
+}
+
+// Bad, no space before the parameters
+function save (user) {
+    // ...
+}
+```
+
+```js
+// Good
+save(user, function (response) {
+    // ...
+});
+
+// Bad, anonymous functions require a space before the parameters
+save(user, function(response) {
+    // ...
+});
+```
+
+### Spacing and Indentation in Objects and Arrays
+
+Objects and arrays require spaces between their braces and brackets. Arrays that contain an object or another array mustn't have a space between the brackets. Multiline objects and arrays require trailing commas.
+
+```js
+// Good
+const person = { name: 'Sebastian', job: 'Developer' };
+
+// Bad, no spaces between parentheses
+const person = {name: 'Sebastian', job: 'Developer'};
+```
+
+```js
+// Good
+const person = {
+    name: 'Sebastian',
+    job: 'Developer',
+};
+
+// Bad, no trailing comma
+const person = {
+    name: 'Sebastian',
+    job: 'Developer'
+};
+```
+
+```js
+// Good
+const pairs = [['a', 'b'], ['c', 'd']];
+const people = [{ name: 'Sebastian' }, { name: 'Willem' }];
+
+// Bad, no extra spaces if the array contains arrays or objects
+const pairs = [ ['a', 'b'], ['c', 'd'] ];
+const people = [ { name: 'Sebastian' }, { name: 'Willem' } ];
+```
+
+### Line Length
+
+Lines shouldn't be longer than 100 characters, and mustn't be longer than 120 characters (the former isn't enforced by ESLint). Comments mustn't be longer than 80 characters.
+
+### Semicolons
+
+Always.
+
 ### Variable Assignment
 
 Prefer `const` over `let`. Only use `let` to indicate that a variable will be reassigned. Never use `var`.
