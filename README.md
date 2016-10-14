@@ -9,7 +9,7 @@ This guide should be used side by side with our base ESLint configuration file, 
 https://github.com/spatie/eslint-config-spatie
 
 ```
-npm install eslint-config-spatie --save-dev
+yarn add --dev eslint-config-spatie
 ```
 
 ## Code Style
@@ -70,7 +70,7 @@ const adder = a => b => sum(a, b);
 
 // Ok, but pretty noisy.
 function adder(a) {
-    return function (b) {
+    return (b) => {
         return sum(a, b);
     }
 }
