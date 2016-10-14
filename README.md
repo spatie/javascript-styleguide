@@ -24,7 +24,7 @@ function greet(name) {
     return `Hello ${name}!`;
 }
 
-// Bad, only 2 spaces
+// Bad, only 2 spaces.
 function greet(name) {
   return `Hello ${name}!`;
 }
@@ -40,7 +40,7 @@ if (true) {
     // ...
 }
 
-// Bad, needs more spaces!
+// Bad, needs more spaces.
 if(true){
     // ...
 }else{
@@ -54,7 +54,7 @@ Infix operators need room to breath.
 // Good
 const two = 1 + 1;
 
-// Bad, needs more spaces!
+// Bad, needs more spaces.
 const two = 1+1;
 ```
 
@@ -81,7 +81,7 @@ function save(user) {
     // ...
 }
 
-// Bad, no space before the parameters
+// Bad, no space before the parameters.
 function save (user) {
     // ...
 }
@@ -93,7 +93,7 @@ save(user, function (response) {
     // ...
 });
 
-// Bad, anonymous functions require a space before the parameters
+// Bad, anonymous functions require a space before the parameters.
 save(user, function(response) {
     // ...
 });
@@ -107,7 +107,7 @@ Objects and arrays require spaces between their braces and brackets. Arrays that
 // Good
 const person = { name: 'Sebastian', job: 'Developer' };
 
-// Bad, no spaces between parentheses
+// Bad, no spaces between parentheses.
 const person = {name: 'Sebastian', job: 'Developer'};
 ```
 
@@ -118,7 +118,7 @@ const person = {
     job: 'Developer',
 };
 
-// Bad, no trailing comma
+// Bad, no trailing comma.
 const person = {
     name: 'Sebastian',
     job: 'Developer'
@@ -130,7 +130,7 @@ const person = {
 const pairs = [['a', 'b'], ['c', 'd']];
 const people = [{ name: 'Sebastian' }, { name: 'Willem' }];
 
-// Bad, no extra spaces if the array contains arrays or objects
+// Bad, no extra spaces if the array contains arrays or objects.
 const pairs = [ ['a', 'b'], ['c', 'd'] ];
 const people = [ { name: 'Sebastian' }, { name: 'Willem' } ];
 ```
@@ -138,6 +138,45 @@ const people = [ { name: 'Sebastian' }, { name: 'Willem' } ];
 ### Line Length
 
 Lines shouldn't be longer than 100 characters, and mustn't be longer than 120 characters (the former isn't enforced by ESLint). Comments mustn't be longer than 80 characters.
+
+### Quotes
+
+Use single quotes if possible. If you need multiline strings or interpolation, use template strings.
+
+```js
+// Good
+const company = 'Spatie';
+
+// Bad, single quotes can be used here.
+const company = "Spatie";
+
+// Bad, single quotes can be used here.
+const company = `Spatie`;
+```
+
+```js
+// Good
+function greet(name) {
+    return `Hello ${name}!`;
+}
+
+// Bad, template strings are preferred.
+function greet(name) {
+    return 'Hello ' + name + '!';
+}
+```
+
+Also, when writing html templates (or jsx for that matter), start multiline templates on a new line.
+
+```js
+function createLabel(text) {
+    return `
+        <div class="label">
+            ${text}
+        </div>
+    `;
+}
+```
 
 ### Semicolons
 
@@ -321,6 +360,34 @@ const adder = a => b => {
 const adder = a => (b) => {
     sum(a, b);
 };
+```
+
+### Object and Array Destructuring
+
+Destructuring is preferred over assigning variables to the corresponding keys.
+
+```js
+// Good
+const [ hours, minutes ] = '12:00'.split(':');
+
+// Bad, unnecessarily verbose, and requires an extra assignment in this case.
+const time = '12:00'.split(':');
+const hours = time[0];
+const minutes = time[1];
+```
+
+Destructuring is very valuable for passing around configuration-like objects.
+
+```js
+function uploader({
+    element,
+    url,
+    multiple = false,
+    beforeUpload = noop,
+    afterUpload = noop,
+}) {
+    // ...
+}
 ```
 
 ## Credits
