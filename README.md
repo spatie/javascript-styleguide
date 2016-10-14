@@ -68,11 +68,9 @@ function sum(a, b) {
 // Good
 const adder = a => b => sum(a, b);
 
-// Ok, but pretty noisy.
+// Ok, but unnecessarily noisy.
 function adder(a) {
-    return (b) => {
-        return sum(a, b);
-    }
+    return b => sum(a, b);
 }
 ```
 
