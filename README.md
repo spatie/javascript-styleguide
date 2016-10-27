@@ -36,7 +36,7 @@ function greet(name) {
     return `Hello ${name}!`;
 }
 
-// Bad, only 2 spaces
+// Bad, only 2 spaces.
 function greet(name) {
   return `Hello ${name}!`;
 }
