@@ -1,6 +1,4 @@
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
-
 # JavaScript Style Guide
 
 A work in progress JavaScript style guide for our projects at [Spatie](https://spatie.be).
@@ -9,7 +7,7 @@ Spatie is a webdesign agency in Antwerp, Belgium. You'll find an overview of all
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/javascript-styleguide.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/javascript-styleguide)
+[<img src="https://spatie.be/github-ad-image/javascript-styleguide.jpg" width="419px" />](https://spatie.be/github-ad-click/javascript-styleguide)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
